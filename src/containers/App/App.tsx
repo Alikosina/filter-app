@@ -1,5 +1,11 @@
-import * as React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 
-const AppContainer = () => <div>Hello Filter-App!</div>;
+const AppContainer = (props: any) => {
+  useEffect(() => {
+    console.log("init");
+  }, []);
+  return <div>Hello Filter-App!</div>;
+};
 
-export default AppContainer;
+export default connect()(AppContainer);
