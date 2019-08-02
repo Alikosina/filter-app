@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "unknownProperties": "error",
+          "emptyRules": "error",
+          "zeroUnits": "error",
+          "ieHack": "error",
+          "important": "warning",
+          "float": "warning"
+        }
+      }
+    ],
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "./dist/",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["src/*"],
+      "@containers/*": ["src/containers/*"],
+      "@components/*": ["src/components/*"],
+      "@modules/*": ["src/modules/*"]
+    },
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es2018",
+    "jsx": "react"
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}
