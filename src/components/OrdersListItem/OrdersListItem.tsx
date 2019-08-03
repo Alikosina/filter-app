@@ -9,6 +9,12 @@ const OrdersListItem = (props: OrdersListItemProps) => {
   const [isOpened, setIsOpened] = useState(false);
   const { onClick, products } = props;
   const { description, docDate, docNum } = props.order;
+  const containerClassName = classnames("orders-list-item-container", {
+    "orders-list-item-container_opened": isOpened
+  });
+  const className = classnames("orders-list-item", {
+    "orders-list-item_opened": isOpened
+  });
   const arrowClassName = classnames("orders-list-item__arrow", {
     "orders-list-item__arrow_opened": isOpened
   });
@@ -17,25 +23,21 @@ const OrdersListItem = (props: OrdersListItemProps) => {
     onClick();
   };
   return (
-    <React.Fragment>
-      <div className="orders-list-item">
+    <div className={containerClassName}>
+      <div className={className}>
         <div onClick={handleArrowClick}>
           <span className={arrowClassName} />
         </div>
-        <div>{description} </div>
-        <div>{docDate}</div>
-        <div>{docNum}</div>
+        <div>Номер: {docNum} </div>
+        <div>Дата: {docDate} </div>
+        <div>Описание: {description} </div>
       </div>
       {isOpened ? (
         <div>
-          {!products ? (
-            <LoaderComponent />
-          ) : (
-            <ProductsListComponent products={products} />
-          )}
+          <ProductsListComponent products={products} />
         </div>
       ) : null}
-    </React.Fragment>
+    </div>
   );
 };
 

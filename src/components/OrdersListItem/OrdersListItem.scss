@@ -1,10 +1,21 @@
+.orders-list-item-container {
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  &_opened {
+    border-color: #0984e3;
+  }
+}
+
 .orders-list-item {
   display: flex;
   padding: 15px 20px;
   background: #0984e3;
-  margin-bottom: 15px;
   border-radius: 15px;
   color: #fff;
+  &_opened {
+    margin-bottom: 0;
+  }
   &__arrow {
     cursor: pointer;
     border: solid #fff;
