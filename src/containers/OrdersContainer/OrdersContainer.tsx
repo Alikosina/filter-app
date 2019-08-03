@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { connect } from "react-redux";
+import { fetchProducts } from "@store/products/productsActions";
 import OrdersListItem from "@components/OrdersListItem";
 import { OrdersContainerProps } from "./models";
 import "./ordersContainer.scss";
