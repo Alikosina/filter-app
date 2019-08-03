@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchOrders } from "@store/orders/ordersActions";
 import LoaderComponent from "@components/LoaderComponent";
+import OrdersContainer from "@containers/OrdersContainer";
 import "./App.scss";
 
 const AppContainer = (props: any) => {
@@ -11,11 +12,7 @@ const AppContainer = (props: any) => {
   }, []);
   return (
     <div>
-      {ordersLoading ? (
-        <LoaderComponent fullScreen />
-      ) : (
-        <div>Hello Filter-App!</div>
-      )}
+      {ordersLoading ? <LoaderComponent fullScreen /> : <OrdersContainer />}
     </div>
   );
 };
