@@ -6,19 +6,29 @@ import { OrdersContainerProps } from "./models";
 import "./ordersContainer.scss";
 
 const OrdersContainer = (props: OrdersContainerProps) => {
-  const { orders } = props;
+  const { orders, dispatch, products } = props;
+  const handleOnClick = (id: number) => {
+    if (!products[id]) {
+      dispatch(fetchProducts(id));
+    }
+  };
   return (
     <div className="orders-list">
       <h2 className="order-list__title">Заказы</h2>
       {orders.map(order => (
-        <OrdersListItem order={{ ...order }} onClick={() => {}} />
+        <OrdersListItem
+          products={products[order.id]}
+          order={{ ...order }}
+          onClick={handleOnClick.bind(this, order.id)}
+        />
       ))}
     </div>
   );
 };
 
 const mapStateToProps = (state: any) => ({
-  orders: state.orders.data
+  orders: state.orders.data,
+  products: state.products.data
 });
 
 // @ts-ignore

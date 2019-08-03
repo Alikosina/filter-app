@@ -1,3 +1,3 @@
 export interface LoaderComponentProps {
-  fullScreen: boolean;
+  fullScreen?: boolean;
 }

@@ -1,1 +1,5 @@
-export { ProductItemModel, ProductsStateModel } from "./productsStateModel";
+export {
+  ProductItemModel,
+  ProductsStateModel,
+  ProductsDataModel
+} from "./productsStateModel";
