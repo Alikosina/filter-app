@@ -3,8 +3,9 @@ import {
   FETCH_ORDERS_ERROR,
   FETCH_ORDERS_SUCCESS
 } from "./ordersConstants";
+import { OrdersStateModel } from "./models/ordersStateModel";
 
-const initialState: any = {
+const initialState: OrdersStateModel = {
   loading: false,
   data: [],
   error: null
