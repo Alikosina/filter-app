@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useCallback } from "react";
 import { connect } from "react-redux";
 import { fetchOrders } from "@store/orders/ordersActions";
 import "./FilterContainer.scss";
@@ -6,22 +6,22 @@ import "./FilterContainer.scss";
 const FilterContainer = (props: any) => {
   const [filterValue, setFilterValue] = useState("");
   const [isActiveFilter, setIsActiveFilter] = useState(false);
-  const handleOnChange = (e: any) => {
+  const handleOnChange = useCallback((e: any) => {
     const value = e.currentTarget.value;
     setFilterValue(value);
-  };
-  const handleOnClick = () => {
+  }, []);
+  const handleOnClick = useCallback(() => {
     const queryObject = {
       filter: filterValue
     };
     props.dispatch(fetchOrders(queryObject));
     setIsActiveFilter(true);
-  };
-  const handleOnClickCancel = () => {
+  }, [filterValue]);
+  const handleOnClickCancel = useCallback(() => {
     props.dispatch(fetchOrders());
     setIsActiveFilter(false);
     setFilterValue("");
-  };
+  }, []);
   return (
     <div className="filter-container">
       Фильтр по номеру заказа{" "}
@@ -31,14 +31,14 @@ const FilterContainer = (props: any) => {
         onClick={handleOnClick}
         disabled={!filterValue}
       >
-        Применить фильтрацию
+        Применить
       </button>
       <button
         className="filter-container__button"
         disabled={!isActiveFilter}
         onClick={handleOnClickCancel}
       >
-        отменить фильтрацию
+        Отменить
       </button>
     </div>
   );

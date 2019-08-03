@@ -1,9 +1,9 @@
 import React, { memo } from "react";
+import { ProductsListComponentProps } from "./models";
 import "./ProductsListComponent.scss";
 import LoaderComponent from "@components/LoaderComponent";
 
-const ProductsListComponent = (props: any) => {
-  console.log("props = ", props);
+const ProductsListComponent = (props: ProductsListComponentProps) => {
   const { products } = props;
   return (
     <div className="products-list">

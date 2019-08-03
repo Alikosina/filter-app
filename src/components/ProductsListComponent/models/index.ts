@@ -1,0 +1,1 @@
+export { ProductsListComponentProps } from "./productsListComponentProps";

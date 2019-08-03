@@ -18,7 +18,7 @@ export const fetchProducts = (orderId: number) => (dispatch: any) => {
             orderId
           }
         });
-      }, 1500);
+      }, 500);
     })
     .catch(error => {
       dispatch({

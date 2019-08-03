@@ -13,7 +13,7 @@ export const fetchOrders = (query?: any) => (dispatch: any) => {
     .then(response => {
       setTimeout(() => {
         dispatch({ type: FETCH_ORDERS_SUCCESS, payload: response });
-      }, 1500);
+      }, 500);
     })
     .catch(error => {
       dispatch({

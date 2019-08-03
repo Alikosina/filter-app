@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useCallback } from "react";
 import { OrdersListItemProps } from "./models";
 import classnames from "classnames";
 import ProductsListComponent from "@components/ProductsListComponent";
@@ -17,10 +17,10 @@ const OrdersListItem = (props: OrdersListItemProps) => {
   const arrowClassName = classnames("orders-list-item__arrow", {
     "orders-list-item__arrow_opened": isOpened
   });
-  const handleArrowClick = () => {
+  const handleArrowClick = useCallback(() => {
     setIsOpened(!isOpened);
     onClick();
-  };
+  }, [isOpened]);
   return (
     <div className={containerClassName}>
       <div className={className}>

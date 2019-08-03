@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchOrders } from "@store/orders/ordersActions";
-import LoaderComponent from "@components/LoaderComponent";
 import OrdersContainer from "@containers/OrdersContainer";
 import "./App.scss";
 

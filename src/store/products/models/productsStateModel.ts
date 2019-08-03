@@ -1,5 +1,4 @@
 import { InitialStateModel } from "../../models";
-import { number } from "prop-types";
 
 export interface ProductItemModel {
   id: number;

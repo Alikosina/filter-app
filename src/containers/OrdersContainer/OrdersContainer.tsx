@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "@store/products/productsActions";
 import OrdersListItem from "@components/OrdersListItem";
@@ -9,11 +9,11 @@ import LoaderComponent from "@app/components/LoaderComponent";
 
 const OrdersContainer = (props: OrdersContainerProps) => {
   const { orders, dispatch, products, ordersLoading } = props;
-  const handleOnClick = (id: number) => {
+  const handleOnClick = useCallback((id: number) => {
     if (!products[id]) {
       dispatch(fetchProducts(id));
     }
-  };
+  }, []);
   return (
     <div className="orders-list">
       <div className="orders-list__header">
