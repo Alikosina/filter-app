@@ -13,7 +13,7 @@ const LoaderComponent = (props: LoaderComponentProps) => {
   });
   return (
     <div className={className}>
-      <Loader type="Oval" color="#82ed07" height="100" width="100" />
+      <Loader type="Oval" color="#0984e3" height="100" width="100" />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const OrdersContainer = (props: OrdersContainerProps) => {
     <div className="orders-list">
       <h2 className="order-list__title">Заказы</h2>
       {orders.map(order => (
-        <OrdersListItem {...order} />
+        <OrdersListItem order={{ ...order }} onClick={() => {}} />
       ))}
     </div>
   );
