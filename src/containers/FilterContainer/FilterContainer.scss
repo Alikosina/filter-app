@@ -1,0 +1,13 @@
+.filter-container {
+  &__button {
+    background: #0984e3;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 7px;
+    margin-left: 5px;
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

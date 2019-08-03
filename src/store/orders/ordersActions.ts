@@ -4,10 +4,11 @@ import {
   FETCH_ORDERS_SUCCESS,
   FETCH_ORDERS_ERROR
 } from "./ordersConstants";
+import { prepareQuery } from "./helper";
 
-export const fetchOrders = () => (dispatch: any) => {
+export const fetchOrders = (query?: any) => (dispatch: any) => {
   dispatch({ type: FETCH_ORDERS });
-  fetch(`${LINK_MAIN_API}/order`)
+  fetch(`${LINK_MAIN_API}/order${prepareQuery(query)}`)
     .then(r => r.json())
     .then(response => {
       setTimeout(() => {

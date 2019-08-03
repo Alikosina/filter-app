@@ -6,19 +6,14 @@ import OrdersContainer from "@containers/OrdersContainer";
 import "./App.scss";
 
 const AppContainer = (props: any) => {
-  const { ordersLoading } = props;
   useEffect(() => {
     props.dispatch(fetchOrders());
   }, []);
   return (
     <div>
-      {ordersLoading ? <LoaderComponent fullScreen /> : <OrdersContainer />}
+      <OrdersContainer />
     </div>
   );
 };
 
-const mapStateToProps = (state: any) => ({
-  ordersLoading: state.orders.loading
-});
-
-export default connect(mapStateToProps)(AppContainer);
+export default connect()(AppContainer);

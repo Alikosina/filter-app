@@ -1,7 +1,6 @@
 import React, { memo, useState } from "react";
 import { OrdersListItemProps } from "./models";
 import classnames from "classnames";
-import LoaderComponent from "@components/LoaderComponent";
 import ProductsListComponent from "@components/ProductsListComponent";
 import "./OrdersListItem.scss";
 

@@ -5,4 +5,5 @@ export interface OrdersContainerProps {
   orders: OrderItemModel[];
   products: ProductsDataModel;
   dispatch: any;
+  ordersLoading: boolean;
 }
