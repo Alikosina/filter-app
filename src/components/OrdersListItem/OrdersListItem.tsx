@@ -2,6 +2,7 @@ import React, { memo, useState } from "react";
 import { OrdersListItemProps } from "./models";
 import classnames from "classnames";
 import LoaderComponent from "@components/LoaderComponent";
+import ProductsListComponent from "@components/ProductsListComponent";
 import "./OrdersListItem.scss";
 
 const OrdersListItem = (props: OrdersListItemProps) => {
@@ -30,7 +31,7 @@ const OrdersListItem = (props: OrdersListItemProps) => {
           {!products ? (
             <LoaderComponent />
           ) : (
-            products.map(product => <div key={product.id}>{product.name}</div>)
+            <ProductsListComponent products={products} />
           )}
         </div>
       ) : null}
